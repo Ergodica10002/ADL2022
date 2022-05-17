@@ -1,0 +1,20 @@
+python3 qa/run_qa.py \
+  --model_name_or_path hfl/chinese-roberta-wwm-ext-large \
+  --train_file data/qa_train.json \
+  --validation_file data/qa_valid.json \
+  --context_file data/context.json \
+  --do_train \
+  --do_eval \
+  --output_dir ckpt/qa \
+  --cache_dir cache/qa \
+  --per_device_train_batch_size 16 \
+  --learning_rate 3e-5 \
+  --num_train_epochs 3 \
+  --max_seq_length 384 \
+  --doc_stride 128 \
+  --overwrite_output \
+  --overwrite_cache \
+  --save_total_limit 3 \
+  --evaluation_strategy steps \
+  --load_best_model_at_end True \
+  --metric_for_best_model eval_exact_match

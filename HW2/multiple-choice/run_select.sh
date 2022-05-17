@@ -1,0 +1,18 @@
+python3 multiple-choice/run_select.py \
+--model_name_or_path bert-base-chinese \
+--train_file data/select_train.json \
+--validation_file data/select_valid.json \
+--do_train \
+--do_eval \
+--learning_rate 5e-5 \
+--num_train_epochs 3 \
+--output_dir ckpt/select \
+--cache_dir cache/select \
+--context_file data/context.json \
+--gradient_accumulation_steps 8 \
+--per_gpu_eval_batch_size=2 \
+--per_device_train_batch_size=2 \
+--overwrite_output \
+--overwrite_cache \
+--max_seq_length 512 \
+--save_total_limit 5

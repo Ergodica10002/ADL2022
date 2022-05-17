@@ -1,0 +1,1 @@
+python3 test_slot.py --num_layer 3 --test_file "${1}" --ckpt_path slot_best.pt --pred_file "${2}"

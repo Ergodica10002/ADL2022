@@ -1,0 +1,11 @@
+python3 multiple-choice/run_pred.py \
+--model_name_or_path ckpt/select/pytorch_model.bin \
+--config_name ckpt/select/config.json \
+--tokenizer_path ckpt/select/ \
+--test_file data/select_test.json \
+--context_file ${1} \
+--output_dir out/select \
+--output_file data/pred_for_qa.json \
+--per_device_eval_batch_size=16 \
+--per_device_train_batch_size=16 \
+--max_seq_length 512
